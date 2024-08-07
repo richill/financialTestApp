@@ -14,6 +14,9 @@ gem "bootsnap", require: false
 gem 'simple_form'
 gem 'country_select'
 gem "pry"
+gem 'roo'               # For reading Excel files
+gem 'axlsx'             # For writing Excel files
+gem 'axlsx_rails'       # For exporting to Excel in Rails
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
