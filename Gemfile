@@ -15,8 +15,8 @@ gem 'simple_form'
 gem 'country_select'
 gem "pry"
 gem 'roo'               # For reading Excel files
-gem 'axlsx'             # For writing Excel files
-gem 'axlsx_rails'       # For exporting to Excel in Rails
+gem 'caxlsx'            # For writing Excel files (initially name as 'axlsx')
+gem 'caxlsx_rails'      # For writing Excel files (initially name as 'axlsx_rails')
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
