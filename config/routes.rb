@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'financial_records/index'
-  get 'financial_records/import'
-  get 'financial_records/export'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'financial_records#index'
+  resources :financial_records, only: [:index] do
+    collection { post :import }
+    collection { get :export }
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # get 'financial_records/index'
+  # get 'financial_records/import'
+  # get 'financial_records/export'
 end
