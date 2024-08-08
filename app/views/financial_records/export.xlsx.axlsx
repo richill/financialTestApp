@@ -1,0 +1,10 @@
+<h1>FinancialRecords#export</h1>
+<p>Find me in app/views/financial_records/export.xlsx.axlsx</p>
+
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Financial Records") do |sheet|
+  sheet.add_row ["Date", "Description", "Amount"]
+  @financial_records.each do |record|
+    sheet.add_row [record.date, record.description, record.amount]
+  end
+end
