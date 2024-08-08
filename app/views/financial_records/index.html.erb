@@ -1,14 +1,13 @@
 <div class="dashboard_form-inner_section">
   <!--<div class="form_header_cover"><h1>Financial Records</h1></div>-->
   <div class="form_cover margin_bottom_30px">
-    <%= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
-
+    <%= form_with url: import_financial_records_path, local: true, multipart: true do %>
       <div class="form-inputs">
-        <%= f.input :file, as: :file, label: 'Choose File' %>
+        <%= label_tag :file %>
+        <%= file_field_tag :file %>
       </div>
-
       <div class="form-actions">
-        <%= f.button :submit, "Submit Import Excel File" %>
+        <%= submit_tag "Import Excel File" %>
       </div>
     <% end %>
   </div>
@@ -39,16 +38,14 @@
 </div>
 
 
+<!--<div class="un_used_data">-->
+  <%#= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
+<!--    <div class="form-inputs">-->
+      <%#= f.input :file, as: :file, label: 'Choose File' %>
+<!--    </div>-->
 
-
-<div class="original_content hide">
-  <%= form_with url: import_financial_records_path, local: true, multipart: true do %>
-    <div class="field">
-      <%= label_tag :file %>
-      <%= file_field_tag :file %>
-    </div>
-    <div class="actions">
-      <%= submit_tag "Import Excel File" %>
-    </div>
-  <% end %>
-</div>
+<!--    <div class="form-actions">-->
+      <%#= f.button :submit, "Submit Import Excel File" %>
+<!--    </div>-->
+  <%# end %>
+<!--</div>-->
