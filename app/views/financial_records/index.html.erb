@@ -22,6 +22,8 @@
           <th>Description</th>
           <th>Amount</th>
           <th>Double amount</th>
+          <th>Debit</th>
+          <th>Credit</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +34,8 @@
               <td><%= record.description %></td>
               <td><%= record.amount %></td>
               <td><%= record.double_data_amount %></td>
+              <td><%= record.debit_paid_out %></td>
+              <td><%= record.credit_paid_in %></td>
             </tr>
           <% end %>
         <% end %>
