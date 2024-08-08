@@ -1,6 +1,8 @@
 class FinancialRecordsController < ApplicationController
   def index
     @financial_records = FinancialRecord.all
+    @total_amount = FinancialRecord.total_amount
+    # @financial_records = FinancialRecord.total_amount
   end
 
   def import

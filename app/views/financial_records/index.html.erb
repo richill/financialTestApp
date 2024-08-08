@@ -21,15 +21,19 @@
           <th>Date</th>
           <th>Description</th>
           <th>Amount</th>
+          <th>Total amount</th>
         </tr>
         </thead>
         <tbody>
-        <% @financial_records.each do |record| %>
-          <tr>
-            <td><%= record.date %></td>
-            <td><%= record.description %></td>
-            <td><%= record.amount %></td>
-          </tr>
+        <% if @financial_records.present? %>
+          <% @financial_records.each do |record| %>
+            <tr>
+              <td><%= record.date %></td>
+              <td><%= record.description %></td>
+              <td><%= record.amount %></td>
+              <td><%= @total_amount %></td>
+            </tr>
+          <% end %>
         <% end %>
         </tbody>
       </table>
