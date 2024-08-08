@@ -1,7 +1,7 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Financial Records") do |sheet|
-  sheet.add_row ["Date", "Description", "Amount"]
+  sheet.add_row ["Date", "Description", "Debit Amount (paid-out)", "Credit Amount (paid-in)"]
   @financial_records.each do |record|
-    sheet.add_row [record.date, record.description, record.amount]
+    sheet.add_row [record.date, record.description, record.debit_paid_out, record.credit_paid_in]
   end
 end
