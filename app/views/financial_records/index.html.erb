@@ -1,18 +1,41 @@
-<h1>FinancialRecords#index</h1>
-
-
-
 <div class="dashboard_form-inner_section">
-  <%= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
+  <div class="form_header_cover"><h1>FinancialRecords#index</h1></div>
+  <div class="form_cover">
+    <%= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
 
-    <div class="form-inputs">
-      <%= f.input :file, as: :file, label: 'Choose File' %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :file, as: :file, label: 'Choose File' %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Import Excel File" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Import Excel File" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form_info_cover">
+    <div class="form_info_link_cover"><%= link_to "Export to Excel", export_financial_records_path(format: :xlsx) %></div>
+    <div class="form_info_table_cover">
+      <table>
+        <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @financial_records.each do |record| %>
+          <tr>
+            <td><%= record.date %></td>
+            <td><%= record.description %></td>
+            <td><%= record.amount %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
-  <% end %>
+  </div>
 </div>
 
 
