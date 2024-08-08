@@ -1,6 +1,6 @@
 class FinancialRecord < ApplicationRecord
 
-  def double_amount
+  def double_data_amount
     amount*2
   end
 

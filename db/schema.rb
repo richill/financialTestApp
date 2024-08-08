@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_07_163053) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_08_150543) do
   create_table "financial_records", force: :cascade do |t|
     t.date "date"
     t.string "description"
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "double_amount"
     t.index ["amount"], name: "index_financial_records_on_amount"
     t.index ["date"], name: "index_financial_records_on_date"
     t.index ["description"], name: "index_financial_records_on_description"
+    t.index ["double_amount"], name: "index_financial_records_on_double_amount"
   end
 
 end
