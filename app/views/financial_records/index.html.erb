@@ -1,14 +1,31 @@
 <h1>FinancialRecords#index</h1>
-<p>Find me in app/views/financial_records/index.html.erb</p>
+
 
 
 <div class="dashboard_form-inner_section">
-  <%= simple_form_for :financial_record, url: import_financial_records_path, html: { multipart: true } do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
 
     <div class="form-inputs">
-      <div><%= f.input :id_number, label: false %></div>
+      <%= f.input :file, as: :file, label: 'Choose File' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Import Excel File" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<div class="original_content hide">
+  <%= form_with url: import_financial_records_path, local: true, multipart: true do %>
+    <div class="field">
+      <%= label_tag :file %>
+      <%= file_field_tag :file %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Import Excel File" %>
     </div>
   <% end %>
 </div>
