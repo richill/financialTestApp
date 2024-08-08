@@ -46,19 +46,6 @@
     <table class="margin_bottom_15px">
       <thead>
       <tr>
-        <th>Total Debit Amount (paid-out)</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><%= @total_debit_amount %></td>
-      </tr>
-      </tbody>
-    </table>
-    <!--section-->
-    <table class="margin_bottom_15px">
-      <thead>
-      <tr>
         <th>Total Credit Amount (paid-in)</th>
       </tr>
       </thead>
@@ -72,7 +59,20 @@
     <table class="margin_bottom_15px">
       <thead>
       <tr>
-        <th>Total Debit (paid-in) - Credit (paid-out) Amount</th>
+        <th>Total Debit Amount (paid-out)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @total_debit_amount %></td>
+      </tr>
+      </tbody>
+    </table>
+    <!--section-->
+    <table class="margin_bottom_15px">
+      <thead>
+      <tr>
+        <th>Total Credit (paid-in) - Debit (paid-out) Amount</th>
       </tr>
       </thead>
       <tbody>

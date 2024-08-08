@@ -3,7 +3,7 @@ class FinancialRecordsController < ApplicationController
     @financial_records = FinancialRecord.all
     @total_debit_amount = FinancialRecord.total_debit_amount
     @total_credit_amount = FinancialRecord.total_credit_amount
-    @total_amount = @total_debit_amount - @total_credit_amount
+    @total_amount = @total_credit_amount - @total_debit_amount
   end
 
   def import
