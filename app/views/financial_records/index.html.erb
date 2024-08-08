@@ -20,10 +20,8 @@
         <tr>
           <th>Date</th>
           <th>Description</th>
-          <th>Amount</th>
-          <th>Double amount</th>
-          <th>Debit</th>
-          <th>Credit</th>
+          <th>Debit (paid-in)</th>
+          <th>Credit (paid-out)</th>
         </tr>
         </thead>
         <tbody>
@@ -32,8 +30,6 @@
             <tr>
               <td><%= record.date %></td>
               <td><%= record.description %></td>
-              <td><%= record.amount %></td>
-              <td><%= record.double_data_amount %></td>
               <td><%= record.debit_paid_out %></td>
               <td><%= record.credit_paid_in %></td>
             </tr>
@@ -49,20 +45,7 @@
     <table class="margin_bottom_15px">
       <thead>
       <tr>
-        <th>Total Amount</th>
-      </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td><%= @total_amount %></td>
-          </tr>
-      </tbody>
-    </table>
-    <!--section-->
-    <table class="margin_bottom_15px">
-      <thead>
-      <tr>
-        <th>Total Debit Amount</th>
+        <th>Total Debit Amount (paid-in)</th>
       </tr>
       </thead>
       <tbody>
@@ -75,12 +58,26 @@
     <table class="margin_bottom_15px">
       <thead>
       <tr>
-        <th>Total Credit Amount</th>
+        <th>Total Credit Amount (paid-out)</th>
       </tr>
       </thead>
       <tbody>
       <tr>
         <td><%= @total_credit_amount %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--section-->
+    <table class="margin_bottom_15px">
+      <thead>
+      <tr>
+        <th>Total Debit (paid-in) - Credit (paid-out) Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @total_amount %></td>
       </tr>
       </tbody>
     </table>
