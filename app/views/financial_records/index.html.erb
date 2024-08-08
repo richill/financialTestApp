@@ -28,7 +28,8 @@
         <% if @financial_records.present? %>
           <% @financial_records.each do |record| %>
             <tr>
-              <td><%= record.date.strftime('%d %b %Y') %></td>
+              <td><%= record.date %></td>
+              <!--<td><%#= Date.parse(record.date.to_s).change(year: 2024) %></td>-->
               <td><%= record.description %></td>
               <td><%= record.debit_paid_out %></td>
               <td><%= record.credit_paid_in %></td>
