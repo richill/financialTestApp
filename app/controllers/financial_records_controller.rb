@@ -5,7 +5,13 @@ class FinancialRecordsController < ApplicationController
 
   def import
     file = params[:file]
-    return redirect_to root_url, alert: "Please upload a valid Excel file." if file.blank?
+    if file.blank?
+      redirect_to financial_records_upload_fail_path
+    else
+      redirect_to root_url
+    end
+
+    # return redirect_to root_url, alert: "Please upload a valid Excel file." if file.blank?
 
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)
@@ -25,5 +31,8 @@ class FinancialRecordsController < ApplicationController
         ] = "attachment; filename=financial_records.xlsx"
       }
     end
+  end
+
+  def upload_fail
   end
 end
