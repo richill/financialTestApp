@@ -33,12 +33,12 @@ table {
 
 th {
     border: 1px solid gray;
-    width: 200px;
+    width: 300px;
 }
 
 td {
     border: 1px solid gray;
-    width: 200px;
+    width: 300px;
 }
 
 .fail_notice_cover {
