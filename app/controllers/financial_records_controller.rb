@@ -1,8 +1,10 @@
 class FinancialRecordsController < ApplicationController
   def index
     @financial_records = FinancialRecord.all
-    # @total_amount = FinancialRecord.total_amount
-    # @financial_records = FinancialRecord.total_amount
+    @total_amount = FinancialRecord.total_amount
+
+    @total_debit_amount = FinancialRecord.total_debit_amount
+    @total_credit_amount = FinancialRecord.total_credit_amount
   end
 
   def import

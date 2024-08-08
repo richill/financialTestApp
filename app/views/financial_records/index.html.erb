@@ -12,7 +12,7 @@
     <% end %>
   </div>
 
-  <div class="form_info_cover">
+  <div class="form_info_cover margin_bottom_30px">
     <div class="form_info_link_cover margin_bottom_15px"><%= link_to "Export to Excel", export_financial_records_path(format: :xlsx) %></div>
     <div class="form_info_table_cover">
       <table>
@@ -42,5 +42,47 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div>
+    <!--section-->
+    <table class="margin_bottom_15px">
+      <thead>
+      <tr>
+        <th>Total Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @total_amount %></td>
+          </tr>
+      </tbody>
+    </table>
+    <!--section-->
+    <table class="margin_bottom_15px">
+      <thead>
+      <tr>
+        <th>Total Debit Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @total_debit_amount %></td>
+      </tr>
+      </tbody>
+    </table>
+    <!--section-->
+    <table class="margin_bottom_15px">
+      <thead>
+      <tr>
+        <th>Total Credit Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @total_credit_amount %></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
