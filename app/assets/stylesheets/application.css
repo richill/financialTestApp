@@ -40,3 +40,10 @@ td {
     border: 1px solid gray;
     width: 200px;
 }
+
+.fail_notice_cover {
+    color: red;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: arial;
+}
