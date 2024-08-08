@@ -1,6 +1,6 @@
 <div class="dashboard_form-inner_section">
-  <div class="form_header_cover"><h1>FinancialRecords#index</h1></div>
-  <div class="form_cover">
+  <div class="form_header_cover"><h1>FinancialRecords</h1></div>
+  <div class="form_cover margin_bottom_30px">
     <%= simple_form_for :financial_records, url: import_financial_records_path, html: { multipart: true } do |f| %>
 
       <div class="form-inputs">
@@ -14,7 +14,7 @@
   </div>
 
   <div class="form_info_cover">
-    <div class="form_info_link_cover"><%= link_to "Export to Excel", export_financial_records_path(format: :xlsx) %></div>
+    <div class="form_info_link_cover margin_bottom_15px"><%= link_to "Export to Excel", export_financial_records_path(format: :xlsx) %></div>
     <div class="form_info_table_cover">
       <table>
         <thead>
@@ -25,13 +25,13 @@
         </tr>
         </thead>
         <tbody>
-        <% @financial_records.each do |record| %>
+        <%# @financial_records.each do |record| %>
           <tr>
-            <td><%= record.date %></td>
-            <td><%= record.description %></td>
-            <td><%= record.amount %></td>
+            <td><%# record.date %>love</td>
+            <td><%# record.description %>love1</td>
+            <td><%# record.amount %>love2</td>
           </tr>
-        <% end %>
+        <%# end %>
         </tbody>
       </table>
     </div>
