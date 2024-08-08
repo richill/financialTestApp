@@ -27,10 +27,16 @@
     margin-bottom: 30px;
 }
 
+table {
+    text-align: left;
+}
+
 th {
     border: 1px solid gray;
+    width: 200px;
 }
 
 td {
     border: 1px solid gray;
+    width: 200px;
 }
