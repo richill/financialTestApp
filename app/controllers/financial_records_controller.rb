@@ -12,7 +12,6 @@ class FinancialRecordsController < ApplicationController
       redirect_to upload_fail_path
     else
       spreadsheet = Roo::Spreadsheet.open(file.path)
-      # binding.pry
       header = spreadsheet.row(1)
       (2..spreadsheet.last_row).each do |i|
         row = Hash[[header, spreadsheet.row(i)].transpose]
